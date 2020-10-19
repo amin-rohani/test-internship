@@ -1,0 +1,113 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.gradient-border {
+    --borderWidth: 3px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #ab667b, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    background-size: 300% 300%;
+  }
+.wrapper {
+  display: flex;
+  max-width: 1000px;
+  height: 500px;
+  margin: 10% auto;
+  background-image: linear-gradient(90deg, #2376ae 0%, #c16ecf 100%);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.main{
+color: #eee;
+   
+}
+.number {
+  font-size: 200px;
+  order: 2;
+  position: relative;
+  right: 190px;
+  bottom: 60px;
+  color: rgba(66, 64, 64, 0.24);
+  transition: all 0.9s ease;
+
+}
+.hovernumber {
+  transform: translatey(-100px);
+  transition: all 0.9s ease;
+}
+
+.button {
+    position: relative;
+    bottom: 100px;
+  border: 2px solid #000;
+  outline: none;
+  padding: 15px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.8 ease-in ;
+}
+
+.buttonhover{
+    bottom: 0;
+    animation: btn 0.5s ;
+    display: inline-block;
+}
+
+@keyframes btn {
+  0% {
+    transform: translateY(-100px);
+  }
+  25% {
+    transform: translateY(-90px);
+  }
+  30% {
+    transform: translateY(-80px);
+  }
+  40% {
+    transform: translateY(-70px);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  60% {
+    transform: translateY(-50px);
+  }
+  70% {
+    transform: translateY(-40px);
+  }
+  80% {
+    transform: translateY(-30px);
+  }
+  90% {
+    transform: translateY(-20px);
+  }
+  95% {
+    transform: translateY(-10px);
+  }
+  96% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(50px);
+  }
+}
